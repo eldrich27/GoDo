@@ -9,10 +9,11 @@ const filters: Filter[] = ['all', 'active', 'completed'];
 
 export function FilterBar({ filter, onChange }: FilterBarProps) {
   return (
-    <div>
+    <div className="filter-bar">
       {filters.map((f) => (
         <button
           key={f}
+          className="filter-bar__button"
           onClick={() => onChange(f)}
           disabled={f === filter}
         >

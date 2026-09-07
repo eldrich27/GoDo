@@ -8,18 +8,19 @@ interface TodoItemProps {
 
 export function TodoItem({id, title, completed, onToggle, onDelete}: TodoItemProps) {
     return(
-        <li>
-            <label>
+        <li className={`todo-item ${completed ? 'todo-item--completed' : ''}`}>
+            <label className="todo-item__label">
                 <input
+                    className="todo-item__checkbox"
                     type="checkbox"
                     checked={completed}
                     onChange={() => onToggle(id)}
                 />
-                <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+                <span className="todo-item__title">
                     {title}
                 </span>
             </label>
-            <button onClick={() => onDelete(id)} aria-label={`Delete ${title}`}>
+            <button className="todo-item__delete" onClick={() => onDelete(id)} aria-label={`Delete ${title}`}>
                 ×
             </button>
         </li>

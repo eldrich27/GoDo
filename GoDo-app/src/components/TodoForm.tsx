@@ -21,15 +21,16 @@ export function TodoForm({ onAdd }: TodoFormProps) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="todo-form" onSubmit={handleSubmit}>
             <input
+                className="todo-form__input"
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="what needs to be done?"
                 autoFocus
             />
-            <button type="submit">Add</button>
+            <button className="todo-form__button" type="submit">Add</button>
         </form>
     );
 }
