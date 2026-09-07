@@ -5,9 +5,9 @@ export interface Task {
     completed: boolean;
 }
 
-export type Fileter = 'all' | 'active' | 'completed';
+export type Filter = 'all' | 'active' | 'completed';
 
 export interface TaskState {
     tasks: Task[];
-    filter: Fileter;
+    filter: Filter;
 }
