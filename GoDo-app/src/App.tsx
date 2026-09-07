@@ -38,8 +38,8 @@ export default function App() {
   });
 
   return (
-    <main style={{ maxWidth: 500, margin: '2rem auto', fontFamily: 'sans-serif' }}>
-      <h1>Todos</h1>
+    <main className="app">
+      <h1 className="app__title">Todos</h1>
       <TodoForm onAdd={addTodo} />
       <FilterBar filter={filter} onChange={setFilter} />
       <TodoList
@@ -47,7 +47,7 @@ export default function App() {
         onToggle={toggleTodo}
         onDelete={deleteTodo}
       />
-      <p>
+      <p className="todo-count">
         {todos.filter((t) => !t.completed).length} items left
       </p>
     </main>
